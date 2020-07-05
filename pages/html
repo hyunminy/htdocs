@@ -1,10 +1,1 @@
 html is...
-
-response.text().then(function(text){
-response.text().then(function(text){
-
-    fetch('css').then(function(response){
-    fetch('css').then(function(response){
-
-        document.querySelector('article').innerHTML = text;
-        document.querySelector('article').innerHTML = text;
