@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html>
 <head>
@@ -14,7 +16,7 @@
   <ol id="nav">
   </ol>
   <article> 
-
+    
   </article>
   <script>
     function fetchPage(name){
@@ -30,18 +32,16 @@
       fetchPage('welcome')
     }
     fetch('list').then(function(response){
-        response.text().then(function(text){
-          //<li><a href="#!html" onclick="fetchPage('html')">HTML</a></li>
-          console.log(text);
+        response.text().then(function(text){                   
           var items = text.split(',')
           var i = 0;
           var tags = '';
-          while(i<items,length){
+          while(i<items.length){
             var item = items[i];
             item = item.trim();
             var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>'
             console.log(tag)
-            tag = tags + tag
+            tags = tags + tag
             i = i + 1;
           }
           console.log(items)
