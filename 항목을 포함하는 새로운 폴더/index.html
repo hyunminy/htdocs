@@ -1,5 +1,3 @@
-아직 안되는것
-
 <!doctype html>
 <html>
 <head>
@@ -7,6 +5,18 @@
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="colors.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="163278275243-vk3rrirblhslivrrdh6kquagbunvb6eo.apps.googleusercontent.com">
+<script>
+  function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+</script>
   <!-- <script>
     window.fbAsyncInit = function() {
     FB.init({
@@ -54,6 +64,8 @@
   </script> -->
 </head>
 <body>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
   <input type="button" id="authBtn" value="checking..." onclick="
   if(this.value === 'login'){
     //now Logout
